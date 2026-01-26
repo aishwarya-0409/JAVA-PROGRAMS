@@ -3,11 +3,10 @@ import java.util.Scanner;
 public class ArmstrongNumber {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a number to check if it's an Armstrong number: ");
-        int num = input.nextInt();
-        input.close();
-
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.print("Enter a number to check if it's an Armstrong number: ");
+            int num = input.nextInt();
+        
         int originalNum = num;
         int sum = 0;
         int numberOfDigits = String.valueOf(num).length();
@@ -26,7 +25,7 @@ public class ArmstrongNumber {
         }
     }
 }
-
+}
 /* ## 5\. Armstrong Number in Java
 
 An **Armstrong number** is a number equal to the sum of its digits, each raised to the power of the number of digits.

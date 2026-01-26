@@ -3,20 +3,20 @@ import java.util.Scanner;
 public class Factorial {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a non-negative number to calculate its factorial: ");
-        int num = input.nextInt();
-        input.close();
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.print("Enter a non-negative number to calculate its factorial: ");
+            int num = input.nextInt();
 
-        long factorial = 1;
+            long factorial = 1;
 
-        if (num < 0) {
-            System.out.println("Factorial is not defined for negative numbers.");
-        } else {
-            for (int i = 1; i <= num; ++i) {
-                factorial *= i;
+            if (num < 0) {
+                System.out.println("Factorial is not defined for negative numbers.");
+            } else {
+                for (int i = 1; i <= num; ++i) {
+                    factorial *= i;
+                }
+                System.out.println("Factorial of " + num + " is " + factorial);
             }
-            System.out.println("Factorial of " + num + " is " + factorial);
         }
     }
 }
